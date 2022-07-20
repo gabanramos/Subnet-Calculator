@@ -1,24 +1,41 @@
-# Subnet-Calculator
+# Subnet-Calculator :incoming_envelope: :computer: 
 Command Line Interface project for IP subnet calculation
 
-For  a given IP V4 Address, calculates:
+### Outputs
 
-Address without the slash notation
-Address:   XXX.XXX.XXX.XXX       BINARY 
+**Address without the slash notation**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY 
 
-Subnet mask, based on the slash notation. Part of the address used for network address
-Netmask:   XXX.XXX.XXX.XXX = XX  BINARY
 
-Wildcard, part of the address used for hosts
-Wildcard:  0.0.127.255           00000000.00000000.0 1111111.11111111
+**Subnet mask, based on the slash notation. Part of the address used for network address**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX = XX &emsp; BINARY 
 
-Subnet address
-Subnet           XXX.XXX.XXX.XXX/XX  00100000.00010100.1 0000000.00000000 (Class A)
-Broadcast:       32.20.255.255   00100000.00010100.1 1111111.11111111
-HostMin (FHIP):  32.20.128.1     00100000.00010100.1 0000000.00000001
-HostMax (LHIP):  32.20.255.254   00100000.00010100.1 1111111.11111110
-s=9
-S=512
-Subnet Index (000101001) = 41
-h=15
-HIPs Hosts/Net: 32766
+**Wildcard, part of the address used for hosts**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
+
+**Subnet address**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX/XX &emsp; BINARY &emsp; (Class X)
+
+**Broadcast Address**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
+
+**First Host address for that subnet**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
+
+**Last Host address for that subnet**  
+[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
+
+**Bits for Subnet**  
+s=XX
+
+**How many subnets are possible**  
+S=XXX
+
+**Actual Subnet Index**  
+Subnet Index (BINARY) = XX
+
+**Bits for hosts**  
+h=XX
+
+**How many hosts per Subnet (First and Last are reserved - Broadcast, Wire address)**  
+HIPs Hosts/Net: XXX
