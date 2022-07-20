@@ -1,7 +1,13 @@
 # Subnet-Calculator :incoming_envelope: :computer: 
 Command Line Interface project for IP subnet calculation
 
-### Outputs
+## Input
+
+Change the address inside the code and run the application to see the outputs
+
+
+## Outputs
+
 
 **Address without the slash notation**  
 [FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY 
