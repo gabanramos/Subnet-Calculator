@@ -1,4 +1,4 @@
-# Subnet-Calculator :incoming_envelope: :computer: 
+# Subnet Calculator :incoming_envelope: :computer: 
 Command Line Interface project for IP subnet calculation
 
 ## Input
