@@ -71,9 +71,9 @@ public class Address {
 		
 		// creates net address using 4 octets and adding dots
 		this.address =	splitAddress[0] + "." +
-							splitAddress[1] + "." +
-							splitAddress[2] + "." +
-							splitAddress[3];
+				splitAddress[1] + "." +
+				splitAddress[2] + "." +
+				splitAddress[3];
 		
 		// creates net address in binary form
 		binaryAddress = addressToBinary(address);
@@ -135,41 +135,41 @@ public class Address {
 	// IF SO, creates an array of strings, each element one chunk of the address
 	public void validateInput(String[] splitAddressParam) {
 		// checks the length. Should be 5 (4 octets and slash notation)
-				if (splitAddressParam.length != 5) {
-					System.out.println("Error, input in wrong format. Not 5 chunks");
-					System.exit(0);
-				}
-				
-				// checks if there is a / in last octet, and strips it
-				if (splitAddressParam[4].contains("/")) {
-					splitAddressParam[4] = splitAddressParam[4].replace("/", "");
-				} else {
-					System.out.println("Error, input in wrong format. Last chunk without '/'");
-					System.exit(0);			
-				}
-				
-				// checks if resulting chunks are numbers, and within 0-255
-				for (int i = 0; i < splitAddressParam.length; i++) {
-			        try{
-			            int number = Integer.parseInt(splitAddressParam[i]);
-			            if (number > 255) 
-			            	throw new NumberFormatException("Number bigger than 255");
-			            if(i == 4 && number <= 0) {
-			            	throw new NumberFormatException("Slash smaller than 0");
-				        }
-			            if(i == 4 && number > 32) {
-			            	throw new NumberFormatException("Slash bigger than 32");
-				        }
-			        
-			        }
-			        catch (NumberFormatException ex){
-			            System.out.println("Chunk #" + (i+1) + " is not a valid number. " + ex.getMessage());
-			            System.exit(0);
-			        }
-			        
-			        
-			        
-				}
+		if (splitAddressParam.length != 5) {
+			System.out.println("Error, input in wrong format. Not 5 chunks");
+			System.exit(0);
+		}
+
+		// checks if there is a / in last octet, and strips it
+		if (splitAddressParam[4].contains("/")) {
+			splitAddressParam[4] = splitAddressParam[4].replace("/", "");
+		} else {
+			System.out.println("Error, input in wrong format. Last chunk without '/'");
+			System.exit(0);			
+		}
+
+		// checks if resulting chunks are numbers, and within 0-255
+		for (int i = 0; i < splitAddressParam.length; i++) {
+		try{
+		    int number = Integer.parseInt(splitAddressParam[i]);
+		    if (number > 255) 
+			throw new NumberFormatException("Number bigger than 255");
+		    if(i == 4 && number <= 0) {
+			throw new NumberFormatException("Slash smaller than 0");
+			}
+		    if(i == 4 && number > 32) {
+			throw new NumberFormatException("Slash bigger than 32");
+			}
+
+		}
+		catch (NumberFormatException ex){
+		    System.out.println("Chunk #" + (i+1) + " is not a valid number. " + ex.getMessage());
+		    System.exit(0);
+		}
+
+
+
+		}
 				
 				
 	}
@@ -229,9 +229,7 @@ public class Address {
 
 		// amount of hosts possible
 		output.append("HIPs Hosts/Net: " + hostsPossible);
-	
-// TODO
-//			Subnet Index (000101001) = 41
+
 
 		
 		return output;
@@ -356,72 +354,72 @@ public class Address {
 	private void createSubnetWildcard() {
 		
 		String[] netmasks = {	"255.255.255.255",	// /32 0
-								"255.255.255.254",	// /31 1
-								"255.255.255.252",	// /30 2
-								"255.255.255.248",	// /29 3
-								"255.255.255.240",	// /28 4
-								"255.255.255.224",	// /27 5
-								"255.255.255.192",	// /26 6
-								"255.255.255.128",	// /25 7
-								"255.255.255.0",	// /24 8
-								"255.255.254.0",	// /23 9
-								"255.255.252.0",	// /22 10
-								"255.255.248.0",	// /21 11
-								"255.255.240.0",	// /20 12
-								"255.255.224.0",	// /19 13
-								"255.255.192.0",	// /18 14
-								"255.255.128.0",	// /17 15
-								"255.255.0.0",		// /16 16
-								"255.254.0.0",		// /15 17
-								"255.252.0.0",		// /14 18
-								"255.248.0.0",		// /13 19
-								"255.240.0.0",		// /12 20
-								"255.224.0.0",		// /11 21
-								"255.192.0.0",		// /10 22
-								"255.128.0.0",		// /9  23
-								"255.0.0.0",		// /8  24
-								"254.0.0.0",		// /7  25
-								"252.0.0.0",		// /6  26
-								"248.0.0.0",		// /5  27
-								"240.0.0.0",		// /4  28
-								"224.0.0.0",		// /3  29
-								"192.0.0.0",		// /2  30
-								"128.0.0.0",		// /1  31
-								"0.0.0.0"};			// /0  32
-		
+					"255.255.255.254",	// /31 1
+					"255.255.255.252",	// /30 2
+					"255.255.255.248",	// /29 3
+					"255.255.255.240",	// /28 4
+					"255.255.255.224",	// /27 5
+					"255.255.255.192",	// /26 6
+					"255.255.255.128",	// /25 7
+					"255.255.255.0",	// /24 8
+					"255.255.254.0",	// /23 9
+					"255.255.252.0",	// /22 10
+					"255.255.248.0",	// /21 11
+					"255.255.240.0",	// /20 12
+					"255.255.224.0",	// /19 13
+					"255.255.192.0",	// /18 14
+					"255.255.128.0",	// /17 15
+					"255.255.0.0",		// /16 16
+					"255.254.0.0",		// /15 17
+					"255.252.0.0",		// /14 18
+					"255.248.0.0",		// /13 19
+					"255.240.0.0",		// /12 20
+					"255.224.0.0",		// /11 21
+					"255.192.0.0",		// /10 22
+					"255.128.0.0",		// /9  23
+					"255.0.0.0",		// /8  24
+					"254.0.0.0",		// /7  25
+					"252.0.0.0",		// /6  26
+					"248.0.0.0",		// /5  27
+					"240.0.0.0",		// /4  28
+					"224.0.0.0",		// /3  29
+					"192.0.0.0",		// /2  30
+					"128.0.0.0",		// /1  31
+					"0.0.0.0"};		// /0  32
+
 		String[] wildcards = {	"0.0.0.0",
-								"0.0.0.1",
-								"0.0.0.3",
-								"0.0.0.7",
-								"0.0.0.15",
-								"0.0.0.31",
-								"0.0.0.63",
-								"0.0.0.127",
-								"0.0.0.255",
-								"0.0.1.255",
-								"0.0.3.255",
-								"0.0.7.255",
-								"0.0.15.255",
-								"0.0.31.255",
-								"0.0.63.255",
-								"0.0.127.255",
-								"0.0.255.255",
-								"0.1.255.255",
-								"0.3.255.255",
-								"0.7.255.255",
-								"0.15.255.255",
-								"0.31.255.255",
-								"0.63.255.255",
-								"0.127.255.255",
-								"0.255.255.255",
-								"1.255.255.255",
-								"3.255.255.255",
-								"7.255.255.255",
-								"15.255.255.255",
-								"31.255.255.255",
-								"63.255.255.255",
-								"127.255.255.255",
-								"255.255.255.255"};
+					"0.0.0.1",
+					"0.0.0.3",
+					"0.0.0.7",
+					"0.0.0.15",
+					"0.0.0.31",
+					"0.0.0.63",
+					"0.0.0.127",
+					"0.0.0.255",
+					"0.0.1.255",
+					"0.0.3.255",
+					"0.0.7.255",
+					"0.0.15.255",
+					"0.0.31.255",
+					"0.0.63.255",
+					"0.0.127.255",
+					"0.0.255.255",
+					"0.1.255.255",
+					"0.3.255.255",
+					"0.7.255.255",
+					"0.15.255.255",
+					"0.31.255.255",
+					"0.63.255.255",
+					"0.127.255.255",
+					"0.255.255.255",
+					"1.255.255.255",
+					"3.255.255.255",
+					"7.255.255.255",
+					"15.255.255.255",
+					"31.255.255.255",
+					"63.255.255.255",
+					"127.255.255.255",
+					"255.255.255.255"};
 		
 		subnetMask 	= netmasks[32 - slash];
 		wildcard	= wildcards[32 - slash];
