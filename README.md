@@ -9,39 +9,21 @@ Change the address inside the code and run the application to see the outputs
 ## Outputs
 
 
-**Address without the slash notation**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY 
+| Name  |  Decimal Format  | BINARY? | CLASS? |
+| --- | --- | :---: | :---: |
+|  Address (without the slash notation) |  XXX.XXX.XXX.XXX | :white_check_mark: | 
+|  Subnet mask, based on the slash notation |  XXX.XXX.XXX.XXX = XX | :white_check_mark: |
+|  Wildcard, part of the address used for hosts |  XXX.XXX.XXX.XXX | :white_check_mark: |
+|  Subnet address |  XXX.XXX.XXX.XXX/XX  | :white_check_mark: | :white_check_mark: |
+|  Broadcast address |  XXX.XXX.XXX.XXX  | :white_check_mark: |
+|  First Host address |  XXX.XXX.XXX.XXX  | :white_check_mark: |
+|  Last Host address |  XXX.XXX.XXX.XXX  | :white_check_mark: |
 
+| Name  |  Format  | 
+| --- | ---: |
+|  Bits for Subnet |  s = XXX | 
+| # of subnets possible |  S = XXX | 
+|  Index for subnet input |  (BINARY) = XX | 
+|  Bits for host |  h = XXX | 
+|  Hosts per subnet|  Hosts/Net = XXX | 
 
-**Subnet mask, based on the slash notation. Part of the address used for network address**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX = XX &emsp; BINARY 
-
-**Wildcard, part of the address used for hosts**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
-
-**Subnet address**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX/XX &emsp; BINARY &emsp; (Class X)
-
-**Broadcast Address**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
-
-**First Host address for that subnet**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
-
-**Last Host address for that subnet**  
-[FORMAT]:&emsp; XXX.XXX.XXX.XXX &emsp; BINARY
-
-**Bits for Subnet**  
-s=XX
-
-**How many subnets are possible**  
-S=XXX
-
-**Actual Subnet Index**  
-Subnet Index (BINARY) = XX
-
-**Bits for hosts**  
-h=XX
-
-**How many hosts per Subnet (First and Last are reserved - Broadcast, Wire address)**  
-HIPs Hosts/Net: XXX
